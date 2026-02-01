@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import RecipeList from './components/RecipeList'
+import SearchBar from './components/SearchBar'
 import AddRecipeForm from './components/AddRecipeForm'
 import RecipeDetails from './components/RecipeDetails'
 import './App.css'
@@ -14,6 +15,7 @@ function App() {
           element={
             <>
               <AddRecipeForm />
+              <SearchBar />
               <RecipeList />
             </>
           }
