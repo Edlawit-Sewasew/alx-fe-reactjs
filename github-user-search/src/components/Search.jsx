@@ -62,6 +62,7 @@ function Search() {
   const handleLoadMore = async () => {
     const nextPage = page + 1
     setLoadingMore(true)
+    setError(false)
     try {
       const response = await searchUsersAdvanced({
         query: query.trim(),
@@ -174,6 +175,10 @@ function Search() {
                   <img
                     src={user.avatar_url}
                     alt={`${user.login} avatar`}
+                    width={64}
+                    height={64}
+                    loading="lazy"
+                    decoding="async"
                     className="w-16 h-16 rounded-full object-cover flex-shrink-0"
                   />
                   <div className="min-w-0 flex-1">

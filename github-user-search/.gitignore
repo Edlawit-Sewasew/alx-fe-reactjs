@@ -11,8 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Environment variables (do not commit secrets; add in Vercel dashboard)
 .env
 .env.local
+.env.*.local
 
 # Editor directories and files
 .vscode/*
