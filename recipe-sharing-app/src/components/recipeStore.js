@@ -18,6 +18,27 @@ const useRecipeStore = create(set => {
     recipes: [],
     searchTerm: '',
     filteredRecipes: [],
+    // Favorites: array of recipe IDs the user has marked as favorites
+    favorites: [],
+    addFavorite: (recipeId) => set(state => {
+      if (state.favorites.includes(recipeId)) return state
+      return { favorites: [...state.favorites, recipeId] }
+    }),
+    removeFavorite: (recipeId) => set(state => ({
+      favorites: state.favorites.filter(id => id !== recipeId)
+    })),
+    // Recommendations: personalized suggestions based on user's favorites
+    recommendations: [],
+    generateRecommendations: () => set(state => {
+      // Recommend recipes NOT in favorites (discovery) - limit to 5 for variety
+      const notFavorited = state.recipes.filter(
+        recipe => !state.favorites.includes(recipe.id)
+      )
+      const recommended = notFavorited
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 5)
+      return { recommendations: recommended }
+    }),
     setSearchTerm: (term) => set(state => ({
       searchTerm: term,
       ...updateFiltered(state.recipes, term)
@@ -47,8 +68,10 @@ const useRecipeStore = create(set => {
     }),
     deleteRecipe: (id) => set(state => {
       const recipes = state.recipes.filter(recipe => recipe.id !== id)
+      const favorites = state.favorites.filter(favId => favId !== id)
       return {
         recipes,
+        favorites,
         ...updateFiltered(recipes, state.searchTerm)
       }
     })
