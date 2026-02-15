@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import recipeData from '../data.json'
+import { useRecipeStore } from './recipeStore'
 
 const RecipeDetail = () => {
   const { id } = useParams()
   const [recipe, setRecipe] = useState(null)
+  const storeRecipes = useRecipeStore(state => state.recipes)
 
   useEffect(() => {
-    const found = recipeData.find(r => r.id === Number(id))
-    setRecipe(found)
-  }, [id])
+    const numericId = Number(id)
+    const fromData = recipeData.find(r => r.id === numericId)
+    const fromStore = storeRecipes.find(r => r.id === numericId)
+    setRecipe(fromData ?? fromStore ?? undefined)
+  }, [id, storeRecipes])
 
   if (recipe === undefined) {
     return (
@@ -54,7 +58,7 @@ const RecipeDetail = () => {
         <header className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-md bg-white dark:bg-gray-800">
           <div className="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-gray-100 dark:bg-gray-700">
             <img
-              src={recipe.image}
+              src={recipe.image || 'https://via.placeholder.com/400x250'}
               alt={recipe.title}
               className="w-full h-full object-cover"
             />
@@ -63,9 +67,9 @@ const RecipeDetail = () => {
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               {recipe.title}
             </h1>
-            {recipe.summary && (
+            {(recipe.summary ?? recipe.description) && (
               <p className="mt-2 text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                {recipe.summary}
+                {recipe.summary ?? recipe.description}
               </p>
             )}
           </div>
