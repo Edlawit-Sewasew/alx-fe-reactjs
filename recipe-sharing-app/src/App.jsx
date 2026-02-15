@@ -10,7 +10,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <h1>Recipe Sharing App</h1>
+      <h1 className="text-blue-500">Recipe Sharing App</h1>
       <Routes>
         <Route
           path="/"
