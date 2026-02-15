@@ -3,24 +3,90 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/400x250"
+    "image": "https://via.placeholder.com/400x250",
+    "ingredients": [
+      "400g spaghetti",
+      "200g guanciale or pancetta, diced",
+      "4 large egg yolks + 2 whole eggs",
+      "100g Pecorino Romano, finely grated",
+      "50g Parmesan, finely grated",
+      "Freshly ground black pepper",
+      "Salt for pasta water"
+    ],
+    "instructions": [
+      "Bring a large pot of salted water to the boil. Add the spaghetti and cook until al dente (about 9–11 minutes). Reserve 1 cup of pasta water, then drain.",
+      "While the pasta cooks, fry the guanciale or pancetta in a large pan over medium heat until crisp and golden (about 8–10 minutes). Remove from heat.",
+      "In a bowl, whisk together the egg yolks, whole eggs, Pecorino, Parmesan, and a generous amount of black pepper until smooth.",
+      "Add the hot pasta to the pan with the guanciale. Off the heat, pour in the egg mixture and toss quickly. Add a splash of reserved pasta water to loosen and create a silky sauce. Serve immediately with extra Pecorino and black pepper."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/400x250"
+    "image": "https://via.placeholder.com/400x250",
+    "ingredients": [
+      "500g boneless chicken breast, cubed",
+      "150ml plain yogurt",
+      "2 tbsp tikka masala paste",
+      "1 tbsp vegetable oil",
+      "1 large onion, finely chopped",
+      "3 garlic cloves, minced",
+      "400g canned chopped tomatoes",
+      "100ml double cream",
+      "1 tsp garam masala",
+      "Fresh coriander and lime to serve"
+    ],
+    "instructions": [
+      "Mix the chicken with the yogurt and 1 tbsp tikka paste. Cover and marinate for at least 30 minutes (or overnight in the fridge).",
+      "Heat the oil in a large pan. Fry the chicken in batches until golden and cooked through. Set aside.",
+      "In the same pan, fry the onion until soft. Add the garlic and remaining tikka paste and cook for 1 minute. Add the tomatoes and simmer for 10 minutes.",
+      "Stir in the cream and garam masala. Return the chicken to the pan and simmer for 5 minutes. Season and serve with rice, coriander, and lime."
+    ]
   },
   {
     "id": 3,
     "title": "Vegetable Stir Fry",
     "summary": "A quick and healthy dish with crisp vegetables and a savory soy sauce glaze.",
-    "image": "https://via.placeholder.com/400x250"
+    "image": "https://via.placeholder.com/400x250",
+    "ingredients": [
+      "2 tbsp vegetable or sesame oil",
+      "1 head of broccoli, cut into florets",
+      "1 bell pepper, sliced",
+      "1 carrot, julienned",
+      "100g snap peas or green beans",
+      "2 garlic cloves, minced",
+      "1 tbsp fresh ginger, grated",
+      "3 tbsp soy sauce",
+      "1 tbsp rice vinegar",
+      "1 tsp sesame seeds",
+      "Cooked rice or noodles to serve"
+    ],
+    "instructions": [
+      "Heat 1 tbsp oil in a wok or large frying pan over high heat. Add the broccoli and stir-fry for 2 minutes. Add the pepper, carrot, and snap peas and stir-fry for another 3 minutes until tender-crisp. Transfer to a plate.",
+      "Add the remaining oil to the pan. Fry the garlic and ginger for 30 seconds until fragrant.",
+      "Return the vegetables to the pan. Add the soy sauce and rice vinegar and toss for 1–2 minutes. Sprinkle with sesame seeds and serve over rice or noodles."
+    ]
   },
   {
     "id": 4,
     "title": "Beef Tacos",
     "summary": "Seasoned ground beef in crispy tortillas with fresh toppings and salsa.",
-    "image": "https://via.placeholder.com/400x250"
+    "image": "https://via.placeholder.com/400x250",
+    "ingredients": [
+      "500g ground beef",
+      "1 onion, diced",
+      "2 tsp ground cumin",
+      "1 tsp paprika",
+      "1/2 tsp chilli powder",
+      "Salt and pepper",
+      "8–10 small soft or hard taco shells",
+      "Shredded lettuce, diced tomato, grated cheese, sour cream, salsa, lime and coriander to serve"
+    ],
+    "instructions": [
+      "Heat a large pan over medium-high heat. Add the beef and onion and cook until the beef is browned and the onion is soft (about 8 minutes). Drain excess fat if needed.",
+      "Stir in the cumin, paprika, chilli powder, salt, and pepper. Cook for 1 minute. Add a splash of water if the mixture is dry.",
+      "Warm the taco shells according to package directions. Fill with the beef and top with lettuce, tomato, cheese, sour cream, salsa, lime, and coriander. Serve immediately."
+    ]
   }
 ]

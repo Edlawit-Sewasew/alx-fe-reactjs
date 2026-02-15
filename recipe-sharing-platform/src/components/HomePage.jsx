@@ -28,7 +28,7 @@ const HomePage = () => {
         {recipes.map(recipe => (
           <Link
             key={recipe.id}
-            to={`/recipes/${recipe.id}`}
+            to={`/recipe/${recipe.id}`}
             className="group block bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:border-blue-400"
           >
             <div className="aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-700">
