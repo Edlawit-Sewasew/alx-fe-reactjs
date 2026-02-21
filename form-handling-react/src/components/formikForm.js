@@ -1,3 +1,4 @@
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -40,51 +41,72 @@ function FormikForm() {
       });
   };
 
-  return (
-    <div className="form-container">
-      <h2>Registration (Formik + Yup)</h2>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={RegistrationSchema}
-        onSubmit={handleSubmit}
-      >
-        {() => (
-          <Form>
-            <div className="form-group">
-              <label htmlFor="formik-username">Username</label>
-              <Field
-                type="text"
-                id="formik-username"
-                name="username"
-                placeholder="Enter username"
-              />
-              <ErrorMessage name="username" component="p" className="error-message" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="formik-email">Email</label>
-              <Field
-                type="email"
-                id="formik-email"
-                name="email"
-                placeholder="Enter email"
-              />
-              <ErrorMessage name="email" component="p" className="error-message" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="formik-password">Password</label>
-              <Field
-                type="password"
-                id="formik-password"
-                name="password"
-                placeholder="Enter password"
-              />
-              <ErrorMessage name="password" component="p" className="error-message" />
-            </div>
-            <button type="submit">Register</button>
-          </Form>
-        )}
-      </Formik>
-    </div>
+  return React.createElement(
+    "div",
+    { className: "form-container" },
+    React.createElement("h2", null, "Registration (Formik + Yup)"),
+    React.createElement(
+      Formik,
+      {
+        initialValues: initialValues,
+        validationSchema: RegistrationSchema,
+        onSubmit: handleSubmit,
+      },
+      () =>
+        React.createElement(
+          Form,
+          null,
+          React.createElement(
+            "div",
+            { className: "form-group" },
+            React.createElement("label", { htmlFor: "formik-username" }, "Username"),
+            React.createElement(Field, {
+              type: "text",
+              id: "formik-username",
+              name: "username",
+              placeholder: "Enter username",
+            }),
+            React.createElement(ErrorMessage, {
+              name: "username",
+              component: "p",
+              className: "error-message",
+            })
+          ),
+          React.createElement(
+            "div",
+            { className: "form-group" },
+            React.createElement("label", { htmlFor: "formik-email" }, "Email"),
+            React.createElement(Field, {
+              type: "email",
+              id: "formik-email",
+              name: "email",
+              placeholder: "Enter email",
+            }),
+            React.createElement(ErrorMessage, {
+              name: "email",
+              component: "p",
+              className: "error-message",
+            })
+          ),
+          React.createElement(
+            "div",
+            { className: "form-group" },
+            React.createElement("label", { htmlFor: "formik-password" }, "Password"),
+            React.createElement(Field, {
+              type: "password",
+              id: "formik-password",
+              name: "password",
+              placeholder: "Enter password",
+            }),
+            React.createElement(ErrorMessage, {
+              name: "password",
+              component: "p",
+              className: "error-message",
+            })
+          ),
+          React.createElement("button", { type: "submit" }, "Register")
+        )
+    )
   );
 }
 
