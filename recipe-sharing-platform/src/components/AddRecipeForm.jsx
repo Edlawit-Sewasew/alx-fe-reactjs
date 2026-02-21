@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useRecipeStore } from './recipeStore'
 
 const PLACEHOLDER_IMAGE = 'https://via.placeholder.com/400x250'
@@ -54,7 +55,13 @@ const AddRecipeForm = () => {
   const showError = (field) => touched[field] && errors[field]
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-4 md:p-6">
+    <div className="min-h-screen w-full max-w-2xl mx-auto p-4 md:p-6">
+      <Link
+        to="/"
+        className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline font-medium mb-4 text-sm md:text-base"
+      >
+        ← Back to recipes
+      </Link>
       <div className="rounded-xl border border-gray-200 dark:border-gray-700 shadow-md bg-white dark:bg-gray-800 overflow-hidden">
         <header className="px-4 py-3 md:px-6 md:py-4 bg-gray-50 dark:bg-gray-700/50 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-100">

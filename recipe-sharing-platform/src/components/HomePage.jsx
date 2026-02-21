@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useRecipeStore } from './recipeStore'
 import recipeData from '../data.json'
 
 const HomePage = () => {
-  const [recipes, setRecipes] = useState([])
+  const recipes = useRecipeStore(state => state.recipes)
   const setStoreRecipes = useRecipeStore(state => state.setRecipes)
 
   useEffect(() => {
-    setRecipes(recipeData)
     setStoreRecipes(
       recipeData.map(({ id, title, summary, image }) => ({
         id,
@@ -21,9 +20,17 @@ const HomePage = () => {
 
   return (
     <div className="p-4 md:p-6 lg:p-8 max-w-7xl mx-auto">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">
-        Recipe Sharing App
-      </h1>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-center sm:text-left text-gray-800 dark:text-gray-100">
+          Recipe Sharing App
+        </h1>
+        <Link
+          to="/add-recipe"
+          className="shrink-0 inline-flex items-center justify-center px-4 py-2.5 rounded-lg font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition shadow-sm"
+        >
+          Add recipe
+        </Link>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {recipes.map(recipe => (
           <Link
@@ -33,7 +40,7 @@ const HomePage = () => {
           >
             <div className="aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-700">
               <img
-                src={recipe.image}
+                src={recipe.image || 'https://via.placeholder.com/400x250'}
                 alt={recipe.title}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -43,7 +50,7 @@ const HomePage = () => {
                 {recipe.title}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
-                {recipe.summary}
+                {recipe.description}
               </p>
             </div>
           </Link>
